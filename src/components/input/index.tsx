@@ -1,34 +1,35 @@
 import { useState } from "react"
 
-type TextareaProps = {
+type InputProps = {
     text: string,
+    type: string,
     name: string,
     value: any,
     onChange: any
 }
 
-export function Textarea(props: TextareaProps) {
+export function Input(props: InputProps) {
 
     return (
         <>
-            <label className="col-sm-2 col-form-label">
+            <label className="sr-only">
                 {props.text}
             </label>
-            <textarea
-                className="form-control"
+            <input
                 name={props.name}
-                id="1"
-                cols="10"
-                rows="2"
+                className="form-control"
+                type={props.type}
                 style={{
+                    marginBottom: '1rem',
                     width: '80%',
+                    alignItems: 'center',
                     marginLeft: '50px'
                 }}
                 value={props.value}
                 onChange={props.onChange}
             >
-
-            </textarea>
+            </input>
         </>
+
     )
 }
